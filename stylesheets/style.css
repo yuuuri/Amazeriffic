@@ -1,0 +1,196 @@
+/* Yuri Van Steenburg */
+/* HW2 - CS473 Spring 2015 */
+
+body {
+  background: #f9e933;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 100%;
+}
+
+header, main, footer{
+  min-width: 855px;
+}
+
+header .container, main .container, footer .container {
+  max-width: 855px;
+  margin: auto;
+}
+
+header
+{
+  background: white;
+  overflow: auto;
+  border-bottom: 2px solid lightgray;
+}
+
+header .container h1 {
+  width: 570px;
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+header nav {
+  float: right;
+  width: 285px;
+  margin-top: 15px;
+}
+
+
+
+main {
+  background: white;
+  overflow: auto;
+}
+
+.main_left {
+  float: left;
+  width: 570px;
+  margin-top:50px;
+  margin-bottom: 50px;
+}
+
+.main_left_upper {
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+}
+
+.main_left_lower {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+
+
+.p_1, .p_2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.p_1 p, .p_2 p  {
+  line-height: 1.2em;
+}
+
+.bullet_list {
+  list-style: circle;
+  line-height: 1.2em;
+}
+
+.lightbulb {
+  float: right;
+  width: 285px;
+  margin-top: 10px;
+  max-height: 400px;
+  margin-bottom: 20px;
+}
+
+
+footer {
+  overflow: auto;
+}
+
+
+.contact {
+  float: left;
+  width: 570px;
+ 
+}
+
+footer .container .contact h5, footer .container .sitemap h5 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.sitemap {
+  float: right;
+  width: 285px;
+
+}
+
+.sitemap_left {
+  float: left;
+}
+
+.sitemap_right {
+  float: right;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ubuntu';
+  font-weight: bold;
+}
+
+h1 {
+    font-size: 3.0em;
+}
+
+.faq_h2 {
+  color: cornflowerblue;
+  font-style: italic;
+  padding-bottom: 20px;
+}
+
+h2 {
+  font-size: 2.1em; 
+}
+
+h3 {
+  font-size: large;
+}
+
+.faq_q_h3 {
+  color:blue;
+  background-color: lavender;
+  border-radius: 5px;
+  font-size: large;
+  padding: 10px;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1.0em;
+}
+
+h6 {
+  font-size: 0.5em;
+}
+
+.amazeriffic {
+  color: maroon;
+  font-style: italic;
+}
+
+a {
+  color: red;
+  text-decoration: none;
+}
+
+a:hover {
+  color: cornflowerblue;
+  text-decoration: underline;
+
+}
+
+.sitemap_left li, .sitemap_right li {
+  margin: 0 0 5px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
