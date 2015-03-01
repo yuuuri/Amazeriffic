@@ -50,27 +50,17 @@ main {
   margin-bottom: 50px;
 }
 
-.main_left_upper {
-  margin-top: 10px;
-  margin-bottom: 20px;
-
+.tabs a span {
+    display: inline-block;
+    border-radius: 5px 5px 0 0;
+    width: 100px;
+    margin-right: 10px;
+    text-align: center;
+    background: #ddd;
+    padding: 5px;
 }
 
-.main_left_lower {
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
 
-
-
-.p_1, .p_2 {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.p_1 p, .p_2 p  {
-  line-height: 1.2em;
-}
 
 .bullet_list {
   list-style: circle;
