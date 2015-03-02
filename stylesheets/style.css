@@ -11,48 +11,70 @@ header, main, footer{
   min-width: 855px;
 }
 
-header .container, main .container, footer .container {
+header .container {
   max-width: 855px;
   margin: auto;
 }
 
+main .container {
+  max-width: 855px;
+  margin: auto;
+  padding: 30px;
+}
+
+footer .container {
+    max-width: 855px;
+    margin: auto;
+}
+
+
+
 header
 {
+  padding: 25px 0 25px 0; 
   background: white;
   overflow: auto;
   border-bottom: 2px solid lightgray;
 }
 
-header .container h1 {
-  width: 570px;
-  float: left;
-  margin-top: 10px;
-  margin-bottom: 30px;
+/* MAIN LOGO */
+h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-style: italic;
+    font-size: 3.0em;
+    color: #b33;
+    float: left;
+    width: 570px
+}
+
+/* FOOTER HEADINGS */
+h5 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.25em;
+    margin-bottom: 20px;
 }
 
 header nav {
-  float: right;
-  width: 285px;
-  margin-top: 15px;
+    float: right;
+    width: 285px;
 }
 
-
+a {
+    color: #f00;
+    text-decoration:none;
+    font-weight: bold;
+}
 
 main {
-  background: white;
-  overflow: auto;
-}
-
-.main_left {
-  float: left;
-  width: 570px;
-  margin-top:50px;
-  margin-bottom: 50px;
+    background: #fff;
+    border-radius: 0 5px 5px 5px;
+    overflow: auto;
+    padding 40px;
 }
 
 .tabs a span {
-    display: inline-block;
     border-radius: 5px 5px 0 0;
+    display: inline-block;
     width: 100px;
     margin-right: 10px;
     text-align: center;
@@ -60,129 +82,95 @@ main {
     padding: 5px;
 }
 
-.tabs a span.active {
+.tabs a .active {
     background: #eee;
 }
 
-.bullet_list {
-  list-style: circle;
-  line-height: 1.2em;
+main .content {
+    padding 30px 10px 30px 10px;
+    border-radius: 0 5px 5px 5px;
+    background: #eee;
 }
 
-.lightbulb {
-  float: right;
-  width: 285px;
-  margin-top: 10px;
-  max-height: 400px;
-  margin-bottom: 20px;
+main .content li {
+    border-radius: 5px;
+    padding: 3px;
+    background: #eff;
+    margin: 0 0 10px 0;
 }
 
+main .content button {
+    font-weight: bold;
+    padding: 0 3px 0 3px;
+    border-radius: 5px;
+    background: #ccc;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 1.3em;
+}
+
+main .content p {
+    background: yellow;
+}
+
+main .content input {
+    font-size: 1.5em;
+}
+
+main h3 {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: cornflowerblue;
+    float: left;
+    width: 570px
+}
+
+main .container p
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.0em;
+    color: #b33;
+    float: left;
+    width: 570px;
+
+}
 
 footer {
-  overflow: auto;
+    overflow: auto;
+    border-top: 1px solid #ddd;
+    padding: 40px 0 20px 0;
 }
 
+footer .contact {
+    float: left;
+    width: 570px;
+}
 
-.contact {
+footer .contact p:nth-child(2) {
+    color: #b33;
+    font-style: italic;
+}
+
+footer .sitemap {
+    float: right;
+    width: 285px;
+}
+
+footer ul {
+    width: 230px;
+}
+
+li {
+    list-style: none;
+}
+
+footer .sitemap .left {
   float: left;
-  width: 570px;
- 
 }
 
-footer .container .contact h5, footer .container .sitemap h5 {
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-
-.sitemap {
-  float: right;
-  width: 285px;
-
-}
-
-.sitemap_left {
-  float: left;
-}
-
-.sitemap_right {
+footer .sitemap .right {
   float: right;
 }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Ubuntu';
-  font-weight: bold;
-}
-
-h1 {
-    font-size: 3.0em;
-}
-
-.faq_h2 {
-  color: cornflowerblue;
-  font-style: italic;
-  padding-bottom: 20px;
-}
-
-h2 {
-  font-size: 2.1em; 
-}
-
-h3 {
-  font-size: large;
-}
-
-.faq_q_h3 {
-  color:blue;
-  background-color: lavender;
-  border-radius: 5px;
-  font-size: large;
-  padding: 10px;
-}
-
-h4 {
-  font-size: 1.2em;
-}
-
-h5 {
-  font-size: 1.0em;
-}
-
-h6 {
-  font-size: 0.5em;
-}
-
-.amazeriffic {
-  color: maroon;
-  font-style: italic;
-}
-
-a {
-  color: red;
-  text-decoration: none;
-}
-
-a:hover {
-  color: cornflowerblue;
-  text-decoration: underline;
-
-}
-
-.sitemap_left li, .sitemap_right li {
-  margin: 0 0 5px 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
