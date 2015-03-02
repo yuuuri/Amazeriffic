@@ -1,120 +1,62 @@
-// Client-side code
-/* jshint browser: true, jquery: true, curly: true, eqeqeq: true, forin: true, immed: true, indent: 4, latedef: true, newcap: true, nonew: true, quotmark: double, strict: true, undef: true, unused: true */
- 
-
-
-/*
 var main = function () {
-    "use strict";
-
-    
-    $(".tabs a:nth-child(1)").on("click", function () {
-        //make all the tbs inactive
-        $(".tabs span").removeClass("active");
-
-        //make the first tab active
-        $(".tabs a:nth-child(1) span").addClass("active");
-
-        //empty the main content so we can recreate it
-        $("main .content").empty();
-
-        //return false so we do not flollow the link
-        return false;
-    });
-
-    $(" .tabs a:nth-child(2)").on("click", function () {
-        $(".tabs span).removeClass("active");
-        $(".tabs a:nth-child(2) span").addClass("active");
-        $("main .content").empty();
-        return false;
-    });
-    
-    $(" .tabs a:nth-child(3)").on("click", function () {
-        $(".tabs span).removeClass("active");
-        $(".tabs a:nth-child(3) span").addClass("active");
-        $("main .content").empty();
-        return false;
-    });
-
-     refactoring the code using a function 
-
-    var makeTabActive = function (tabNumber) {
-        //construct the select from the tabNumber
-        var tabSelector = ".tabs a:nth-child(" + tabNumber + ") span";
-        $(".tabs span").removeClass("active");
-        $(tabSelector).addClass("active");
-        $("main .content").empty();
-    };
-
-    $(".tabs a:nth-child(1)").on("click", function () {
-            makeTabActive(1);
-            return false;
-    });
-    
-    $(".tabs a:nth-child(2)").on("click", function () {
-            makeTabActive(2);
-            return false;
-    });
-    $(".tabs a:nth-child(3)").on("click", function () {
-            makeTabActive(3);
-            return false;
-    });
-    
-     using loop and remove makeTabActive function altogether 
-
-   var tabNumber;
-
-   for (tabNumber = 1; tabNumber <=3; tabNumber++) {
-       var tabSelector = ".tab a:nth-child(" + tabNumber + ") span";
-       $(tabSelector).on("click", function (event) {
-           $(".tab span").removeClass("active");
-           $(event.target).addClass("active");
-           return false;
-       });
-   }
-};
-
-
-var main = function () {
-    "use strict";
-
-    $(".tabs span").toArray().forEach(function (element) {
-        //create a click handler for this element
-        $(element).on("click", function () {
-            $("tabs span").removeClass("active");
-            $(element).addCalss("active");
-            $("main .content").empty();
-            return false;
-        });
-    });
-};
-*/
-var main = function() {
-    "use strict";
+    var toDos = ["Get groceries",
+                 "Make up some new ToDos",
+                 "Prep for Monday's class",
+                 "Answer emails",
+                 "Take Gracies to the park",
+                 "Finish writing this book"];
 
     $(".tabs a span").toArray().forEach(function (element) {
-        //create a click handler for this element
-        $(element).on("click", function () {
-            // since we're using the jQuery version of element,
-            // we'll go ahead and create a temporary variable
-            // so we don't need t keep recreating it
-            var $element = $(element);
+        var $element = $(element);
+
+        // create a click handler for this element
+        $element.on("click", function () {
+            var $content,
+                $input,
+                $button,
+                i;
 
             $(".tabs a span").removeClass("active");
             $element.addClass("active");
             $("main .content").empty();
 
-            if($element.parent().is(":nth-child(1)")) {
-                console.log("FIRST TAB CLICKED!");
+            if ($element.parent().is(":nth-child(1)")) {
+                // newest first, so we have to go through
+                // the array backwords
+                $content = $("<ul>");
+                for (i = toDos.length-1; i >= 0; i--) {
+                    $content.append($("<li>").text(toDos[i]));
+                }
             } else if ($element.parent().is(":nth-child(2)")) {
-                console.log("SECOND TAB CLICKED!");
+                // oldest first, so we go through the array forwards
+                $content = $("<ul>");
+                toDos.forEach(function (todo) {
+                    $content.append($("<li>").text(todo));
+                });
             } else if ($element.parent().is(":nth-child(3)")) {
-                console.log("THIRD TAB CLICKED!");
+                // input a new to-do
+                $input = $("<input>"),
+                $button = $("<button>").text("+");
+
+                $button.on("click", function () {
+                    if ($input.val() !== "") {
+                        toDos.push($input.val());
+                        $input.val("");
+                    }
+                });
+
+                $content = $("<div>").append($input).append($button);
+                /* Alternatively append() allows multiple arguments so the above
+                can be done with $content = $("<div>").append($input, $button); */
             }
 
-            return false;
-        });
-    });
-};
+                $("main .content").append($content);
 
-$(document).ready(main);
+                return false;
+            });
+        });
+
+        $(".tabs a:first-child span").trigger("click");
+    };
+
+    $(document).ready(main);
