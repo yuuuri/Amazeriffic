@@ -5,6 +5,10 @@ var main = function () {
                  "Answer emails",
                  "Take Gracies to the park",
                  "Finish writing this book"];
+    var photos = ['<p><a class="group4"  href="images/newest.png" title="1">Grouped Photo 1</a></p>',
+        '<p><a class="group4"  href="images/oldest.png" title="2">Grouped Photo 2</a></p>',
+        '<p><a class="group4"  href="images/before_add.png" title="3">Grouped Photo 3</a></p>',
+        '<p><a class="group4"  href="images/after_add.png" title="4">Grouped Photo 4</a></p>'];
 
     $(".tabs a span").toArray().forEach(function (element) {
         var $element = $(element);
@@ -48,7 +52,17 @@ var main = function () {
                 $content = $("<div>").append($input).append($button);
                 /* Alternatively append() allows multiple arguments so the above
                 can be done with $content = $("<div>").append($input, $button); */
-            }
+            } else if ($element.parent().is(":nth-child(4)")) {
+                $content = $("<ul>");
+                for (i = 0; i <= photos.length; i++){
+                    $content.append($("<li>").html(photos[i]));
+                }
+                $content.click(function(){
+                    $(".group4").colorbox({rel:'group4', slideshow:true, transition:"none", width:"75%", height:"75%"});
+                    });
+                }
+
+            //}
 
                 $("main .content").append($content);
 
