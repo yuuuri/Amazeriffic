@@ -80,6 +80,7 @@ main {
     text-align: center;
     background: #ddd;
     padding: 5px;
+    font-size: 90%;
 }
 
 .tabs a .active {
@@ -135,6 +136,7 @@ main .container p
     width: 570px;
 
 }
+
 
 footer {
     overflow: auto;
